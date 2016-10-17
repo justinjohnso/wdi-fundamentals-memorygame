@@ -1,6 +1,6 @@
 console.log("JS file is connected to HTML! Woo!")
 
-var cards = ['queen', 'queen', 'king', 'king'];
+var cards = ['queen', 'queen', 'king', 'king', 'jack', 'jack', 'ace', 'ace'];
 var cardsInPlay = [];
 
 var gameBoard = document.getElementById('game-board');
@@ -19,11 +19,17 @@ function createBoard(){
 function isTwoCards(){
   cardsInPlay.push(this.getAttribute('data-card'));
 	console.log(this.getAttribute('data-card'));
-	if (this.getAttribute('data-card') == 'king') {
-		this.innerHTML = "<img src='http://i.imgur.com/bnuv5Im.png'>";
+	if (this.getAttribute('data-card') == 'king'){
+		this.innerHTML = "<img src='cards/overwatch_king.jpg'>";
 	}
-	else {
-		this.innerHTML = "<img src='http://i.imgur.com/v6buNt2.png'>";
+	else if (this.getAttribute('data-card') == 'queen'){
+		this.innerHTML = "<img src='cards/overwatch_queen.jpg'>";
+	}
+	else if (this.getAttribute('data-card') == 'jack'){
+		this.innerHTML = "<img src='cards/overwatch_jack.jpg'>";
+	}
+	else if (this.getAttribute('data-card') == 'ace'){
+		this.innerHTML = "<img src='cards/overwatch_ace.jpg'>";
 	}
 	if (cardsInPlay.length == 2) {
 	    isMatch(cardsInPlay);
@@ -39,8 +45,27 @@ function isMatch(cardsInPlay) {
   }
 }
 
+function reset(){
+	
+}
 createBoard();
 
+
+
+// function randomizeNum(){
+// 	var rngNumber = Math.floor(Math.random() * 2);
+// 	return rngNumber;
+// }
+
+// randomizeNum();
+
+// function randomizeCards(rngNumber){
+// 	this.king = king ;
+// 	this.queen = queen ;
+// 	console.log(this.randomizeCards())
+// }
+
+// randomizeCards(randomizeNum());
 
 // Sets the top two cards as queens and 
 // the bottom two as kings
